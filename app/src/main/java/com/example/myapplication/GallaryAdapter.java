@@ -32,8 +32,6 @@ public class GallaryAdapter extends RecyclerView.Adapter<GallaryAdapter.ViewHold
     @Override
     public void onBindViewHolder(GallaryAdapter.ViewHolder holder, int position) {
         final CharacterData data = characterData.get(position);
-//        glide.load(data.getDefaultImageId()).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE)).into(holder.imageView);
-
         if(data.getType() == CharacterData.TYPE_GIF){
             holder.imageView.setController(Fresco.newDraweeControllerBuilder()
                     .setUri(data.getUri())
